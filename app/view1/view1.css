@@ -1,0 +1,32 @@
+.view1-container {
+    margin-top: 10px;
+}
+.result-link {
+    color: black;
+    text-decoration: none;
+}
+.result-link:hover {
+    cursor: pointer;
+    color: black;
+
+}
+.result {
+    padding: 10px 10px 10px 10px;
+    background: white;
+    margin: 5px 0 5px 0;
+}
+.result:hover {
+    border-left: orange thick outset;
+    padding-left: 5px;
+}
+.result img {
+    margin: 0 10px 0 0;
+    height: 64px;
+}
+.result h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.result p {
+}
