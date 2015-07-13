@@ -1,4 +1,5 @@
-<div class="jumbotron">
+<link rel="stylesheet" href="view1/view1.css">
+<!--<div class="jumbotron">
     <a ng-href="">
         <div class="container">
             <h1>Hello, world!</h1>
@@ -12,27 +13,17 @@
             <p></p>
         </div>
     </a>
-</div>
-<div class="container">
+</div>-->
+<div class="container view1-container">
     <div class="row">
-        <div ng-repeat="">
-            <a ng-href="">
-                <div class="col-lg-4 col-sm-12">
-                    <h2>Heading</h2>
+        <div ng-repeat="result in results">
+            <a class="result-link" ng-href="https://en.wikipedia.org/?curid={{result.pageid}}">
+                <div class="result col-lg-12">
+                    <img ng-src="{{result.thumbnail.source}}" class="pull-left">
 
-                    <p>
-                        <img src="https://builder.divshot.com/img/placeholder-100x100.gif" class="pull-left">
-                        Donec id
-                        elit
-                        non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                        condimentum
-                        nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-                        Donec
-                        sed
-                        odio dui.
-                    </p>
+                    <h3>{{result.title}}</h3>
 
-                    <p></p>
+                    <p>{{result.extract}}</p>
                 </div>
             </a>
         </div>
