@@ -1,6 +1,6 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background: url('http://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png') no-repeat;
+    background: url('http://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png') no-repeat fixed;
     background-position-x: center;
 }
