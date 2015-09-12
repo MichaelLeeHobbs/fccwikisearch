@@ -14,6 +14,9 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.searchText = '';
 
         var getResults = function (value) {
+            // abort search if search value less than 3 to respect wikipidea
+            if (value.length < 3) value = undefined;
+
             // if value is undefined/empty set results to empty
             if (value === '' || value === undefined) {
                 $scope.results = [];
