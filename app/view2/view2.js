@@ -11,4 +11,12 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('View2Ctrl', [function() {
 
+
+      var resultFrameSizing = function () {
+        $("#result-frame").height($(window).height() - $("main-menu").height() - 50);
+      };
+      resultFrameSizing();
+      $(window).resize(function(){
+        resultFrameSizing();
+      });
 }]);

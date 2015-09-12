@@ -15,4 +15,18 @@ angular.module('myApp.services', [])
                 return promise;
             }
         };
-    }]);
+    }])
+    .factory('sharedProperties', [function () {
+        'use strict';
+
+        var searchText = '';
+
+        return {
+            getSearchText: function () { return searchText; },
+            setSearchText: function (value) {
+                console.log('service prop: ' + searchText);
+                searchText = value;
+            }
+        }
+    }])
+;

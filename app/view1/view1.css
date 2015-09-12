@@ -1,5 +1,6 @@
 .view1-container {
     margin-top: 10px;
+
 }
 .result-link {
     color: black;
@@ -8,16 +9,20 @@
 .result-link:hover {
     cursor: pointer;
     color: black;
-
+    text-decoration: none;
 }
 .result {
     padding: 10px 10px 10px 10px;
     background: white;
     margin: 5px 0 5px 0;
+    border-radius: 5px;
 }
 .result:hover {
     border-left: orange thick outset;
+    border-bottom: orange thick outset;
     padding-left: 5px;
+    padding-bottom: 5px;
+
 }
 .result img {
     margin: 0 10px 0 0;
