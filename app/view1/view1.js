@@ -21,17 +21,10 @@ angular.module('myApp.view1', ['ngRoute'])
                     $scope.results = results.data.query.pages;
                     console.log("$scope: ");
                     console.log($scope.results);
-                    //$scope.$apply();
                 });
             }
 
         };
-
-        /*
-        $scope.$watch('searchText', function (newValue, oldValue) {
-           if (newValue !== oldValue) sharedProperties.setSearchText(newValue);
-        });*/
-
         $scope.$watch(
             function () {
                 return sharedProperties.getSearchText();
