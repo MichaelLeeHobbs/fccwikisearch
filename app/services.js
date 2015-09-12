@@ -20,13 +20,12 @@ angular.module('myApp.services', [])
         'use strict';
 
         var searchText = '';
+        var randomEntry = '';
 
         return {
             getSearchText: function () { return searchText; },
-            setSearchText: function (value) {
-                console.log('service prop: ' + searchText);
-                searchText = value;
-            }
-        }
-    }])
-;
+            setSearchText: function (value) { searchText = value; },
+            getRandomEntry: function () { return randomEntry; },
+            setRandomEntry: function (value) { randomEntry = value; }
+        };
+    }]);

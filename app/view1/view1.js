@@ -14,23 +14,34 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.searchText = '';
 
         var getResults = function (value) {
-            if (value == '' || value === undefined) {
+            // if value is undefined/empty set results to empty
+            if (value === '' || value === undefined) {
                 $scope.results = [];
+                sharedProperties.setRandomEntry('');
+
+            // else get results
             } else {
-                wikiSvc.query(value).then(function(results){
+                wikiSvc.query(value).then(function (results) {
                     $scope.results = results.data.query.pages;
-                    console.log("$scope: ");
-                    console.log($scope.results);
+
+                    // and select a random entry
+                    var count = 0;
+                    for (var prop in $scope.results) {
+                        if (Math.random() < 1 / ++count) {
+                            sharedProperties.setRandomEntry("https://en.wikipedia.org/?curid=" + prop);
+                        }
+                    }
                 });
             }
 
         };
+        // watch for change in sharedProperties.getSearchText()
         $scope.$watch(
             function () {
                 return sharedProperties.getSearchText();
             },
             function (newValue, oldValue) {
-                if (newValue !== oldValue) getResults(newValue);
+                if (newValue !== oldValue) { getResults(newValue); }
             }
 
         );
