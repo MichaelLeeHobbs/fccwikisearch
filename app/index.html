@@ -29,13 +29,16 @@
 
 </head>
 <body>
-<div ng-controller="MainCtrl">
-    <div class="container text-center">
+<div class="container">
+    <div ng-controller="MainCtrl" class="row text-center">
         <h1>FreeCodeCamp Wikipedia Search Engine</h1>
         <input id="searchText" ng-model="searchText" ng-change="setSearchText(searchText)" type="text" content="" placeholder="Search" autocomplete="on">
         <i id="searchIcon" class="fa fa-search fa-2x"></i>
         <br>
         <a id="luckyButton" ng-style="luckyButtonStyle()" ng-href={{randomEntry}} >I'm Feeling Lucky!</a>
+    </div>
+    <div class="row">
+        <div ng-view></div>
     </div>
 </div>
 
@@ -44,7 +47,7 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div ng-view></div>
+
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
