@@ -13,26 +13,39 @@ angular.module('myApp.view1', ['ngRoute'])
 
         $scope.searchText = '';
 
+        var undefinedResults = function () {
+            $scope.results = [];
+            sharedProperties.setRandomEntry('');
+            // notify MainCtrl we have no results
+            sharedProperties.setHaveResults(false);
+        };
+
         var getResults = function (value) {
             // abort search if search value less than 3 to respect wikipidea
             if (value.length < 3) value = undefined;
 
             // if value is undefined/empty set results to empty
             if (value === '' || value === undefined) {
-                $scope.results = [];
-                sharedProperties.setRandomEntry('');
+                undefinedResults();
 
             // else get results
             } else {
                 wikiSvc.query(value).then(function (results) {
-                    $scope.results = results.data.query.pages;
+                    if (results.data.query === undefined) {
+                        undefinedResults();
+                    } else {
+                        $scope.results = results.data.query.pages;
 
-                    // and select a random entry
-                    var count = 0;
-                    for (var prop in $scope.results) {
-                        if (Math.random() < 1 / ++count) {
-                            sharedProperties.setRandomEntry("https://en.wikipedia.org/?curid=" + prop);
+                        // and select a random entry
+                        var count = 0;
+                        for (var prop in $scope.results) {
+                            if (Math.random() < 1 / ++count) {
+                                sharedProperties.setRandomEntry("https://en.wikipedia.org/?curid=" + prop);
+                            }
                         }
+
+                        // notify MainCtrl we have results
+                        sharedProperties.setHaveResults(true);
                     }
                 });
             }
@@ -48,4 +61,7 @@ angular.module('myApp.view1', ['ngRoute'])
             }
 
         );
+
+
+
     }]);
