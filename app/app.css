@@ -4,3 +4,63 @@ body {
     background: url('http://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png') no-repeat fixed;
     background-position-x: center;
 }
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-weight: bolder;
+    color: black;
+    text-shadow: rgb(220, 121, 42) -1px -2px 0.5em;
+}
+
+#searchText {
+    cursor: auto;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=);
+    background-attachment: scroll;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    padding: 5px;
+    margin: 10px 0 20px 0;
+    border-radius: 10px;
+    min-width: 50%;
+}
+
+#searchText:focus {
+    outline-style: none;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 0 0.25em 0.25em rgba(220, 121, 42, .50);
+}
+
+#luckyButton {
+    padding: 4px 20px;
+    /*give the background a gradient*/
+    background:#ffae00; /*fallback for browsers that don't support gradients*/
+    background: -webkit-linear-gradient(top, #ffae00, #d67600);
+    background: -moz-linear-gradient(top, #ffae00, #d67600);
+    background: -o-linear-gradient(top, #ffae00, #d67600);
+    background: linear-gradient(top, #ffae00, #d67600);
+    border:0.1875em outset #dad9d8;
+    /*style the text*/
+
+
+    font-size:1.5em;
+
+    color:#fff;
+    text-shadow: 0px 1px 10px #000;
+    /*add to small curve to the corners of the button*/
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    /*give the button a drop shadow*/
+    -webkit-box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+    -moz-box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+    box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+}
+/****NOW STYLE THE BUTTON'S HOVER STATE***/
+#luckyButton:hover, #luckyButton:focus {
+    border:3px solid #dad9d8;
+    text-decoration: none;
+}
+
+.unhide {
+    display: inline;
+}
