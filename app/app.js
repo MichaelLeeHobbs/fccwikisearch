@@ -13,11 +13,18 @@ angular.module('myApp', [
     .controller('MainCtrl', ['$scope', 'sharedProperties', function ($scope, sharedProperties) {
         var defaultRandomEntry = 'https://en.wikipedia.org/wiki/FreeCodeCamp';
         $scope.randomEntry = defaultRandomEntry;
+        $scope.luckyButtonStyle = function() {
+            if (sharedProperties.getHaveResults()) {
+                console.log('inline');
+                return {"display": "inline"};
+            }
+            console.log('none');
+            return {"display": "none"};
+        };
 
         $scope.setSearchText = function (value) {
             sharedProperties.setSearchText(value);
         };
-
 
         $scope.$watch(
             function () {
