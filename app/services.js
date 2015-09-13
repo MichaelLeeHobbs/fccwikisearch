@@ -21,11 +21,14 @@ angular.module('myApp.services', [])
 
         var searchText = '';
         var randomEntry = '';
+        var haveResults = false;
 
         return {
             getSearchText: function () { return searchText; },
             setSearchText: function (value) { searchText = value; },
             getRandomEntry: function () { return randomEntry; },
-            setRandomEntry: function (value) { randomEntry = value; }
+            setRandomEntry: function (value) { randomEntry = value; },
+            getHaveResults: function () { return haveResults; },
+            setHaveResults: function (value) { haveResults = value; }
         };
     }]);
